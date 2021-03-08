@@ -5,8 +5,6 @@ import 'package:voyo_app/src/data/blocs/image_data/image_data_bloc.dart';
 import 'package:voyo_app/src/data/data.dart';
 import 'package:voyo_app/src/ui/screens/gallery_screens/camera.dart';
 import 'package:voyo_app/src/ui/screens/gallery_screens/manager.dart';
-import 'package:voyo_app/src/ui/widgets.dart';
-
 import 'gallery_screens/uploader.dart';
 
 class Gallery extends StatefulWidget {
@@ -25,8 +23,8 @@ class _GalleryState extends State<Gallery> {
   @override
   void initState() {
     // TODO: implement initState
-
-     imageDataBloc = ImageDataBloc()..initImageData();
+    imageDataBloc = BlocProvider.of<ImageDataBloc>(context);
+   //  imageDataBloc = ImageDataBloc()..initImageData();
     _getGalleryPage(GalleryPage.manage);
     super.initState();
   }
